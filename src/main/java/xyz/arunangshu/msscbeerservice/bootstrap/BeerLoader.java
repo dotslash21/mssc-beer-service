@@ -1,6 +1,7 @@
 package xyz.arunangshu.msscbeerservice.bootstrap;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import xyz.arunangshu.msscbeerservice.domain.Beer;
@@ -9,6 +10,7 @@ import xyz.arunangshu.msscbeerservice.web.model.BeerStyleEnum;
 
 import java.math.BigDecimal;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class BeerLoader implements CommandLineRunner {
@@ -54,6 +56,8 @@ public class BeerLoader implements CommandLineRunner {
                     .price(new BigDecimal("12.95"))
                     .upc(BEER_3_UPC)
                     .build());
+
+            log.info("Loaded dummy beers in to the DB.");
         }
     }
 }
