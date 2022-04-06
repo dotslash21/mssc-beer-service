@@ -6,6 +6,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import xyz.arunangshu.msscbeerservice.domain.Beer;
 import xyz.arunangshu.msscbeerservice.web.model.BeerStyleEnum;
 
+import java.util.Optional;
 import java.util.UUID;
 
 public interface BeerRepository extends PagingAndSortingRepository<Beer, UUID> {
@@ -16,5 +17,5 @@ public interface BeerRepository extends PagingAndSortingRepository<Beer, UUID> {
 
     Page<Beer> findAllByBeerNameAndBeerStyle(String beerName, String beerStyle, Pageable pageable);
 
-    Beer findByUpc(String upc);
+    Optional<Beer> findByUpc(String upc);
 }
