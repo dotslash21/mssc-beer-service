@@ -50,7 +50,7 @@ public class BeerLoader implements CommandLineRunner {
 
             beerRepository.save(Beer.builder()
                     .beerName("Pinball Porter")
-                    .beerStyle(BeerStyleEnum.PALE_ALE.name())
+                    .beerStyle(BeerStyleEnum.PORTER.name())
                     .minOnHand(12)
                     .quantityToBrew(200)
                     .price(new BigDecimal("12.95"))
